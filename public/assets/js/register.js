@@ -8,6 +8,7 @@ const progessRegister = () => {
  
   //variable con ruta agregar nuevo registro
   const rutaReguster = firebase.database().ref().child('registro').push({
+    startedAt: firebase.database.ServerValue.TIMESTAMP,
     creator: currentUser.displayName,
     name: nameInput.value,
     lastName: lastNameInput.value,
@@ -43,6 +44,7 @@ const drawRegister = (snapshot)=>{
     <td> ${registro[1].name}</td>
     <td> ${registro[1].lastName}</td>
     <td> ${registro[1].rut}</td>
+    <td> ${registro[1].startedAt}</td>
     </tr>` + printRegister;
  });
  document.getElementById('printRegister').innerHTML = printRegister;
