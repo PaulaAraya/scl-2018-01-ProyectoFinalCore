@@ -39,13 +39,21 @@ const progessRegister = () => {
 const drawRegister = (snapshot)=>{
   let printRegister = '';
   Object.entries(snapshot.val()).forEach((registro) => {
+    let date = new Date();
     console.log(registro);
     printRegister = `<tr>
     <td> ${registro[1].name}</td>
     <td> ${registro[1].lastName}</td>
     <td> ${registro[1].rut}</td>
-    <td> ${registro[1].startedAt}</td>
+    <td> ${new Date(registro[1].startedAt)}</td>
     </tr>` + printRegister;
  });
  document.getElementById('printRegister').innerHTML = printRegister;
 };
+
+
+
+/*let date = new Date();
+messageContainer.innerHTML += `
+<p> ${newMessage.val().creatorName}
+(${date.getDate(newMessage.val())} / ${date.getMonth(newMessage.val())+1} - ${date.getHours(newMessage.val())}:${date.getMinutes(newMessage.val())}) : ${newMessage.val().text}</p>`;*/
