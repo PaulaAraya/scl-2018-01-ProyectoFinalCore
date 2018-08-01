@@ -95,18 +95,16 @@
             </div>
             <div class="form-group">
               <label>Rut</label>
-              <input class="form-control" type="text" autocomplete="off" required="" name="rut" id="rut">
+              <input class="form-control" type="number" name="rut" id="rut">
             </div>
             <div class="form-row">
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
-                  <label>Oficina</label>
-                  <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color:#222222;width:100%;">OFICINA</button>
-                    <div class="dropdown-menu" role="menu">
-                      <a class="dropdown-item">LABORATORIA</a>
-                    </div>
-                  </div>
+                  <label>Que espacio visita</label>
+                  <select class="custom-select"  style="background-color:#222222; width: 100" id="selectSpace">
+                      <option selected>Institución</option>
+                      <option value="laboratoria">LABORATORIA</option>
+                    </select>
                 </div>
               </div>
             </div>
@@ -151,8 +149,7 @@
                     <th class="table-dark">OFICINA</th>
                   </tr>
                 </thead>
-                <tbody id="printRegister">
-                </tbody>
+                
               </table>
             </div>
           </div>
@@ -181,8 +178,9 @@
                     <th class="table-dark">OFICINA</th>
                   </tr>
                 </thead>
-                <tbody id="printRegisterAdm">
-                </tbody>
+                <tbody id="printRegister">
+                  <!-- Aqí se imprimen los datos -->
+                  </tbody>
               </table>
             </div>
           </div>

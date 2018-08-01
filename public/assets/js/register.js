@@ -5,6 +5,7 @@ const progessRegister = () => {
   const lastNameInput =  document.getElementById('lastName');
   const rutInput = document.getElementById('rut');
   const photo = document.getElementById('photo');
+  const selectSpace = document.getElementById('selectSpace')
  
   //variable con ruta agregar nuevo registro
   const rutaRegistro = firebase.database().ref().child(`registro`).push().key;
@@ -12,7 +13,8 @@ const progessRegister = () => {
     creator: currentUser.uid,
     name: nameInput.value,
     lastName: lastNameInput.value,
-    rut: rutInput.value
+    rut: rutInput.value,
+    space: selectSpace.value
   });
   nameInput.value = '';
   lastName.value = '';
@@ -20,16 +22,17 @@ const progessRegister = () => {
  };
 
  const drawRegister = (snapshot)=>{
-  let printRegister =+ '';
+  let printRegister = '';
   Object.entries(snapshot.val()).forEach((registro) => {
     console.log(registro);
     printRegister = `
     <tr>
-    <th> ${registro[1].name}</th>
-    <th> ${registro[1].lastName}</th>
-    <th> ${registro[1].rut}</th>
-    </tr>
-    ` + printRegister;
+    <td> ${registro[1].name}</td>
+    <td> ${registro[1].lastName}</td>
+    <td> ${registro[1].rut}</td>
+    <td> ${registro[1].space}</td>
+    </tr>` 
+    + printRegister;
  });
  document.getElementById('printRegister').innerHTML = printRegister;
 };
