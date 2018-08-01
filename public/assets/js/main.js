@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   document.getElementById('btnRegistro').addEventListener('click',progessRegister );
-  document.getElementById('').addEventListener('change',selectSpace);
+  /*document.getElementById('').addEventListener('change',selectSpace);*/
   addListenerToClass('btnrecepcion', showRegister);
   addListenerToClass('btnoficina', showAdmission);
   addListenerToClass('btnadministracion', showAdministrador);
