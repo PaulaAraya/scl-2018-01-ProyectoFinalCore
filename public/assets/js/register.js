@@ -42,7 +42,8 @@ const drawRegister = (snapshot)=>{
     let date = new Date();
     console.log(registro);
     printRegister = `<tr>
-    <td> ${drawPhoto(registro[1].photoURL)}${registro[1].name}</td>
+    <td> ${drawPhoto(registro[1].photoURL)}</td>
+    <td> ${registro[1].name}</td>
     <td> ${registro[1].lastName}</td>
     <td> ${registro[1].rut}</td>
     <td> ${new Date(registro[1].startedAt)}</td>
