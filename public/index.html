@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LOG</title>
-    <!-- link css bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=ba2843fa1bdbb48df8d7cdf2906b1128">
-    <!-- update the version number as needed -->
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.css" />
-    <!-- link css propio -->
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
-    <div id="firebaseui-auth-container"></div>
-    <div id="userData"></div>
-    <!-- seccion donde debe ir pagina de inicio(botones de Administrador/Recepcion/Empresa) -->
-    <section id="menuPage">
-      <h1 class="text-center">
-        <i class="fa fa-address-book-o"></i>
-        <strong>LOG</strong>
-      </h1>
-      <div class="btn-toolbar"></div>
-      <div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-12 offset-0 divrecepcion">
-              <button class="btn btn-dark btn-lg btnrecepcion" type="button" data-bs-hover-animate="pulse">
-                <i class="fa fa-users"></i>
-                <strong>Recepción</strong>
-              </button>
-            </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <title>LOG</title>
+  <!-- link css bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css?h=ba2843fa1bdbb48df8d7cdf2906b1128">
+  <!-- update the version number as needed -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.css" />
+  <!-- link css propio -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div id="firebaseui-auth-container"></div>
+  <div id="userData"></div>
+  <!-- seccion donde debe ir pagina de inicio(botones de Administrador/Recepcion/Empresa) -->
+  <section id="menuPage">
+    <h1 class="text-center">
+      <i class="fa fa-address-book-o"></i>
+      <strong>LOG</strong>
+    </h1>
+    <div class="btn-toolbar"></div>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12 offset-0 divrecepcion">
+            <button class="btn btn-dark btn-lg btnrecepcion" type="button" data-bs-hover-animate="pulse">
+              <i class="fa fa-users"></i>
+              <strong>Recepción</strong>
+            </button>
           </div>
           <div class="row">
             <div class="col-md-12 divoficina">
@@ -103,7 +103,7 @@
                       <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"
                       style="background-color:#222222;width:100%;">OFICINA</button>
                       <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item" style="width:100%;">LABORATORIA</a>
+                        <a class="dropdown-item">LABORATORIA</a>
                       </div>
                     </div>
                   </div>
@@ -115,6 +115,14 @@
                   <button class="btn btn-dark form-btn" id="btnRegistro"type="submit" style="background-color:#222222;">SAVE </button>
                 </div>
               </div>
+            </div>
+
+            <div class="container">
+              <h2>Enviar SMS Mensaje</h2>
+              <input type="tel" name="number" id="number" placeholder="Introduce tu numero telefonico...">
+              <input type="text" name="msg" id="msg" placeholder="Introduce tu Texto del Mensaje...">
+              <input type="button" id="button" value="Send Text" class="button button-primary">
+              <p class="response"></p>
             </div>
           </div>
         </form>
@@ -183,27 +191,30 @@
           </div>
         </div>
       </div>
-    </section>
-    <!-- script bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.min.js?h=a956092e47060f3a4df307fed239128f"></script>
-    <!-- script Firebase -->
-    <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.js"></script>
-    <!-- script propios -->
-    <script src="assets/js/register.js"></script>
-    <script src="assets/js/ administrator.js"></script>
-    <script src="assets/js/ admission.js"></script>
-    <script src="assets/js/menu.js"></script>
-    <script src="assets/js/signup.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+    </div>
+  </section>
+  <!-- script bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.min.js?h=a956092e47060f3a4df307fed239128f"></script>
+  <!-- script Firebase -->
+  <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.js"></script>
+  <!-- script propios -->
+  <script src="assets/js/register.js"></script>
+  <script src="assets/js/ administrator.js"></script>
+  <script src="assets/js/ admission.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/signup.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

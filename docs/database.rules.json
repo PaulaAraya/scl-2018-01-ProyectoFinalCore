@@ -1,0 +1,14 @@
+ // esta regla es para que las personas autenticadas puedan leer y escribir
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+ }
+
+
+
+  
+  
+  
+  
