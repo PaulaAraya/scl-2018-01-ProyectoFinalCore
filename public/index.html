@@ -1,206 +1,222 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LOG</title>
-    <!-- link css bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=ba2843fa1bdbb48df8d7cdf2906b1128">
-    <!-- update the version number as needed -->
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.css" />
-    <!-- link css propio -->
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
-    <div id="firebaseui-auth-container"></div>
-    <div id="userData"></div>
-    <!-- seccion donde debe ir pagina de inicio(botones de Administrador/Recepcion/Empresa) -->
-    <section id="menuPage">
-      <h1 class="text-center">
-        <i class="fa fa-address-book-o"></i>
-        <strong>LOG</strong>
-      </h1>
-      <div class="btn-toolbar"></div>
-      <div>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-12 offset-0 divrecepcion">
-              <button class="btn btn-dark btn-lg btnrecepcion" type="button" data-bs-hover-animate="pulse">
-                <i class="fa fa-users"></i>
-                <strong>Recepción</strong>
-              </button>
-            </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- link para mensaje de texto -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <title>LOG</title>
+  <!-- link css bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css?h=ba2843fa1bdbb48df8d7cdf2906b1128">
+  <!-- update the version number as needed -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.css" />
+  <!-- link css propio -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div id="firebaseui-auth-container"></div>
+  <div class="row">
+      <div class="col-md-12">
+        <div id="userData"></div>
+      </div>
+  </div>
+  <div ></div>
+  <!-- seccion donde debe ir pagina de inicio(botones de Administrador/Recepcion/Empresa)-->
+  <section id="menuPage">
+    <h1 class="text-center">
+      <i class="fa fa-address-book-o"></i>
+      <strong>LOG</strong>
+    </h1>
+    <div class="btn-toolbar"></div>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12 offset-0 divrecepcion">
+            <button class="btn btn-dark btn-lg btnrecepcion" type="button" data-bs-hover-animate="pulse">
+              <i class="fa fa-users"></i>
+              <strong>Recepción</strong>
+            </button>
           </div>
-          <div class="row">
-            <div class="col-md-12 divoficina">
-              <button class="btn btn-dark btn-lg btnoficina"type="button" data-bs-hover-animate="pulse">
-                <i class="fa fa-users"></i>
-                <strong>Oficina</strong>
-              </button>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 divoficina">
+            <button class="btn btn-dark btn-lg btnoficina" type="button" data-bs-hover-animate="pulse">
+              <i class="fa fa-users"></i>
+              <strong>Oficina</strong>
+            </button>
           </div>
         </div>
       </div>
-      <div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 divadministracion">
-              <button class="btn btn-dark btn-lg btnadministracion" type="button" data-bs-hover-animate="pulse">
-                <i class="fa fa-users"></i>
-                <strong>Administración</strong>
-              </button>
-            </div>
+    </div>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 divadministracion">
+            <button class="btn btn-dark btn-lg btnadministracion" type="button" data-bs-hover-animate="pulse">
+              <i class="fa fa-users"></i>
+              <strong>Administración</strong>
+            </button>
           </div>
         </div>
       </div>
-      <div class="btn-group" role="group"></div>
-    </section>
-    <!-- seccion de signup -->
-    <section class="singupPage"></section>
-    <!-- seccion donde debe ir pagina de recepcion -->
-    <section id="registerPage">
-      <div class="container profile profile-view" id="profile">
-        <h2 class="text-center" style="padding:40px;">
-          <i class="fa fa-address-book-o"></i>
-          <strong>LOG</strong>
-        </h2>
-        <form>
-          <div class="form-row profile-row">
-            <div class="col-md-4 relative">
-              <div class="avatar" style="padding-bottom:20px;">
-                <div class="avatar-bg center"></div>
-              </div>
-              <input type="file" id="photo" class="form-control" name="avatar-file" accept="image/png, image/jpeg" style="background-color:rgb(34,34,34);color:rgb(255,255,255);">
-            </div>
-            <div class="col-md-8">
-              <h1>Visita</h1>
-              <hr>
-              <div class="form-row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                    <label>Nombre</label>
-                    <input class="form-control" id="name" type="text" name="firstname">
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                    <label>Apellido</label>
-                    <input class="form-control" type="text" name="lastname" id ="lastName">
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Rut</label>
-                <input class="form-control" type="text" autocomplete="off" required="" name="rut" id="rut">
-              </div>
-              <div class="form-row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                    <label>Oficina</label>
-                    <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"
-                      style="background-color:#222222;width:100%;">OFICINA</button>
-                      <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item">LABORATORIA</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="form-row">
-                <div class="col-md-12 content-right">
-                  <button class="btn btn-dark form-btn" id="btnRegistro"type="submit" style="background-color:#222222;">SAVE </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-
-    </section>
-    <!-- seccion donde debe ir pagina de Empresa/usuario -->
-    <section id="admissionPage">
-      <h2 class="text-center">
+    </div>
+    <div class="btn-group" role="group"></div>
+  </section>
+  <!-- seccion de signup -->
+  <section class="singupPage"></section>
+  <!-- seccion donde debe ir pagina de recepcion -->
+  <section id="registerPage">
+    <div class="container profile profile-view" id="profile">
+      <h2 class="text-center" style="padding:40px;">
         <i class="fa fa-address-book-o"></i>
         <strong>LOG</strong>
       </h2>
-      <div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="table-responsive table-bordered">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th class="table-dark">NOMBRES</th>
-                      <th class="table-dark">APELLIDOS</th>
-                      <th class="table-dark">RUT</th>
-                      <th class="table-dark">FECHA</th>
-                      <th class="table-dark">OFICINA</th>
-                    </tr>
-                  </thead>
-                </table>
+      <form>
+        <div class="form-row profile-row">
+          <div class="col-md-4 relative">
+            <div class="avatar" style="padding-bottom:20px;">
+              <div class="avatar-bg center"></div>
+            </div>
+            <input type="file" id="photo" class="form-control" name="avatar-file" accept="image/png, image/jpeg" size="5000000 bytes" style="background-color:rgb(34,34,34);color:rgb(255,255,255);">
+          </div>
+          <div class="col-md-8">
+            <h1>Visita</h1>
+            <hr>
+            <div class="form-row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input class="form-control" id="name" type="text" name="firstname">
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Apellido</label>
+                  <input class="form-control" type="text" name="lastname" id="lastName">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Rut</label>
+              <input class="form-control" type="number" name="rut" id="rut">
+            </div>
+            <div class="form-row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group">
+                  <label>Que espacio visita</label>
+                  <select class="custom-select"  style="background-color:#222222; height:38px; width: 100%; color: white;" id="selectSpace">
+                      <option selected>Institución</option>
+                      <option value="laboratoria">LABORATORIA</option>
+                      <option value="roboticsLab">ROBOTICS LAB</option>
+                      <option value="fDM">FABRICA DE MEDIOS</option>
+                      <option value="cafeAltura">CAFE ALTURA</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="form-row">
+              <div class="col-md-12 content-right">
+                <button class="btn btn-dark form-btn" id="btnRegistro" type="submit" style="background-color:#222222;">SAVE </button>
+                <!-- Input de Text MSN -->
+                <div class="container">
+                  <h2>Enviar SMS Mensaje</h2>
+                  <input type="tel" name="number" id="number" placeholder="Introduce tu numero telefonico...">
+                  <input type="text" name="msg" id="msg" placeholder="Introduce tu Texto del Mensaje...">
+                  <input type="button" id="button" value="Send Text" class="button button-primary">
+                  <p class="response"></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <!-- seccion donde debe ir pagina de Empresa/usuario -->
+  <section id="admissionPage">
+    <h2 class="text-center">
+      <i class="fa fa-address-book-o"></i>
+      <strong>LOG</strong>
+    </h2>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive table-bordered">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th class="table-dark">FOTO</th>
+                    <th class="table-dark">NOMBRES</th>
+                    <th class="table-dark">APELLIDOS</th>
+                    <th class="table-dark">RUT</th>
+                    <th class="table-dark">FECHA</th>
+                    <th class="table-dark">OFICINA</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </section>
-    <!-- seccion de dministrador-->
-    <section id="administradorPage">
-      <h2 class="text-center">
-        <i class="fa fa-address-book-o"></i>
-        <strong>LOG</strong>
-      </h2>
-      <div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="table-responsive table-bordered">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th class="table-dark">FOTOGRAFIA</th>
-                      <th class="table-dark">NOMBRES</th>
-                      <th class="table-dark">APELLIDOS</th>
-                      <th class="table-dark">RUT</th>
-                      <th class="table-dark">FECHA</th>
-                      <th class="table-dark">OFICINA</th>
-                    </tr>
-                  </thead>
-                  <tbody id = "printRegister">
+    </div>
+  </section>
+  <!-- seccion de dministrador-->
+  <section id="administradorPage">
+    <h2 class="text-center">
+      <i class="fa fa-address-book-o"></i>
+      <strong>LOG</strong>
+    </h2>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive table-bordered">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                      <th class="table-dark">FOTO</th>
+                    <th class="table-dark">NOMBRE</th>
+                    <th class="table-dark">APELLIDOS</th>
+                    <th class="table-dark">RUT</th>
+                    <th class="table-dark">FECHA</th>
+                    <th class="table-dark">OFICINA</th>
+                  </tr>
+                </thead>
+                <tbody id="printRegister">
+                  <!-- Aqí se imprimen los datos -->
                   </tbody>
-                </table>
-              </div>
+              </table>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- script bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.min.js?h=a956092e47060f3a4df307fed239128f"></script>
-    <!-- script Firebase -->
-    <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.js"></script>
-    <!-- script propios -->
-    <script src="assets/js/register.js"></script>
-    <script src="assets/js/ administrator.js"></script>
-    <script src="assets/js/ admission.js"></script>
-    <script src="assets/js/menu.js"></script>
-    <script src="assets/js/signup.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+    </div>
+  </section>
+  <!-- script bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.min.js?h=a956092e47060f3a4df307fed239128f"></script>
+  <!-- script Firebase -->
+  <script defer src="/__/firebase/5.3.0/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/5.3.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.3.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/5.3.0/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/5.3.0/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.js"></script>
+  <!-- script propios -->
+  <script src="assets/js/register.js"></script>
+  <script src="assets/js/ administrator.js"></script>
+  <script src="assets/js/ admission.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/signup.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>

@@ -4,21 +4,24 @@ const progessRegister = () => {
   const nameInput = document.getElementById('name');
   const lastNameInput =  document.getElementById('lastName');
   const rutInput = document.getElementById('rut');
+  const selectSpace = document.getElementById('selectSpace')
  
  
   //variable con ruta agregar nuevo registro
-  const rutaReguster = firebase.database().ref().child('registro').push({
+  const rutaRegistro = firebase.database().ref().child('registro').push({
     startedAt: firebase.database.ServerValue.TIMESTAMP,
     creator: currentUser.displayName,
     name: nameInput.value,
     lastName: lastNameInput.value,
-    rut: rutInput.value
+    rut: rutInput.value,
+    space: selectSpace.value
   }).key
+
   if(document.getElementById('photo').files[0]) {
     const file = document.getElementById('photo').files[0];
-    firebase.storage().ref(`/registro/${rutaReguster}`).put(file).then((snapshot) => {
+    firebase.storage().ref(`/registro/${rutaRegistro}`).put(file).then((snapshot) => {
       snapshot.ref.getDownloadURL().then((downloadURL) => {
-        firebase.database().ref().child('registro/' + rutaReguster).update({
+        firebase.database().ref().child('registro/' + rutaRegistro).update({
           photoURL: downloadURL
         });
       }).catch(() => { });
@@ -47,6 +50,7 @@ const drawRegister = (snapshot)=>{
     <td> ${registro[1].lastName}</td>
     <td> ${registro[1].rut}</td>
     <td> ${new Date(registro[1].startedAt)}</td>
+    <td> ${registro[1].space}</td>
     </tr>` + printRegister;
  });
  document.getElementById('printRegister').innerHTML = printRegister;

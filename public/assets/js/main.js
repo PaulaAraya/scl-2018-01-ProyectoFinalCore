@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(user);
         hideAll();
         document.getElementById('menuPage').style.display = 'block';
-        document.getElementById('userData').innerHTML='Bienvenid@ ' + user.displayName + ' <a href="#" onClick="signOut()">Cerrar Sesion</a>';
+        document.getElementById('userData').innerHTML= '<i class="fa fa-sign-out" style="margin:5%;font-size:22px;"><a onClick="signOut()">Cerrar Sesion</a></i>';
       }else{
         hideAll();
         document.getElementById('menuPage').style.display = 'none'
