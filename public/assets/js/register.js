@@ -33,4 +33,3 @@ const progessRegister = () => {
  });
  document.getElementById('printRegister').innerHTML = printRegister;
 };
-
