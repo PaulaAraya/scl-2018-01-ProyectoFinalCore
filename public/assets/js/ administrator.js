@@ -1,1 +1,0 @@
-//Administrador tiene acceso a todas las listas de visitas

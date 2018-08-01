@@ -72,7 +72,7 @@
               <div class="avatar" style="padding-bottom:20px;">
                 <div class="avatar-bg center"></div>
               </div>
-              <input type="file" class="form-control" name="avatar-file" style="background-color:rgb(34,34,34);color:rgb(255,255,255);">
+              <input type="file" id="photo" class="form-control" name="avatar-file" style="background-color:rgb(34,34,34);color:rgb(255,255,255);">
             </div>
             <div class="col-md-8">
               <h1>Visita</h1>
@@ -113,13 +113,13 @@
               <div class="form-row">
                 <div class="col-md-12 content-right">
                   <button class="btn btn-dark form-btn" id="btnRegistro"type="submit" style="background-color:#222222;">SAVE </button>
-                  <button class="btn btn-danger form-btn" type="reset">CANCEL </button>
                 </div>
               </div>
             </div>
           </div>
         </form>
       </div>
+
     </section>
     <!-- seccion donde debe ir pagina de Empresa/usuario -->
     <section id="admissionPage">
@@ -142,8 +142,7 @@
                       <th class="table-dark">OFICINA</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr></tr>
+                  <tbody id="printRegister">
                   </tbody>
                 </table>
               </div>
@@ -151,6 +150,7 @@
           </div>
         </div>
       </div>
+
     </section>
     <!-- seccion de dministrador-->
     <section id="administradorPage">
@@ -173,8 +173,7 @@
                       <th class="table-dark">OFICINA</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr></tr>
+                  <tbody id = "printRegisterAdm">
                   </tbody>
                 </table>
               </div>
