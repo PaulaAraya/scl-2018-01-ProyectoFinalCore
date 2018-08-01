@@ -17,7 +17,12 @@
 </head>
 <body>
   <div id="firebaseui-auth-container"></div>
-  <div id="userData"></div>
+  <div class="row">
+      <div class="col-md-12">
+        <div id="userData"></div>
+      </div>
+  </div>
+  <div ></div>
   <!-- seccion donde debe ir pagina de inicio(botones de Administrador/Recepcion/Empresa)-->
   <section id="menuPage">
     <h1 class="text-center">
@@ -101,9 +106,12 @@
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                   <label>Que espacio visita</label>
-                  <select class="custom-select"  style="background-color:#222222; width: 100" id="selectSpace">
+                  <select class="custom-select"  style="background-color:#222222; height:38px; width: 100%; color: white;" id="selectSpace">
                       <option selected>Institución</option>
                       <option value="laboratoria">LABORATORIA</option>
+                      <option value="roboticsLab">ROBOTICS LAB</option>
+                      <option value="fDM">FABRICA DE MEDIOS</option>
+                      <option value="cafeAltura">CAFE ALTURA</option>
                     </select>
                 </div>
               </div>
@@ -149,7 +157,6 @@
                     <th class="table-dark">OFICINA</th>
                   </tr>
                 </thead>
-                
               </table>
             </div>
           </div>
