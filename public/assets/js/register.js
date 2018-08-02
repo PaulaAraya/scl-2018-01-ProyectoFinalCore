@@ -2,11 +2,10 @@
 const progessRegister = () => {
   const currentUser = firebase.auth().currentUser;
   const nameInput = document.getElementById('name');
-  const lastNameInput =  document.getElementById('lastName');
+  const lastNameInput = document.getElementById('lastName');
   const rutInput = document.getElementById('rut');
   const selectSpace = document.getElementById('selectSpace')
- 
- 
+
   //variable con ruta agregar nuevo registro
   const rutaRegistro = firebase.database().ref().child('registro').push({
     startedAt: firebase.database.ServerValue.TIMESTAMP,
@@ -17,7 +16,7 @@ const progessRegister = () => {
     space: selectSpace.value
   }).key
 
-  if(document.getElementById('photo').files[0]) {
+  if (document.getElementById('photo').files[0]) {
     const file = document.getElementById('photo').files[0];
     firebase.storage().ref(`/registro/${rutaRegistro}`).put(file).then((snapshot) => {
       snapshot.ref.getDownloadURL().then((downloadURL) => {
@@ -30,16 +29,16 @@ const progessRegister = () => {
   nameInput.value = '';
   lastName.value = '';
   rut.value = '';
- };
+};
 
- const drawPhoto = (url) => {
+const drawPhoto = (url) => {
   if (url) {
     return `<img src="${url}?alt=media" height="128" width="128">`;
   }
   return '';
 }
 
-const drawRegister = (snapshot)=>{
+const drawRegister = (snapshot) => {
   let printRegister = '';
   Object.entries(snapshot.val()).forEach((registro) => {
     let date = new Date();
@@ -52,13 +51,8 @@ const drawRegister = (snapshot)=>{
     <td> ${new Date(registro[1].startedAt)}</td>
     <td> ${registro[1].space}</td>
     </tr>` + printRegister;
- });
- document.getElementById('printRegister').innerHTML = printRegister;
+  });
+  document.getElementById('printRegister').innerHTML = printRegister;
 };
 
 
-
-/*let date = new Date();
-messageContainer.innerHTML += `
-<p> ${newMessage.val().creatorName}
-(${date.getDate(newMessage.val())} / ${date.getMonth(newMessage.val())+1} - ${date.getHours(newMessage.val())}:${date.getMinutes(newMessage.val())}) : ${newMessage.val().text}</p>`;*/
